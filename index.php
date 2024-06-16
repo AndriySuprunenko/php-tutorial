@@ -22,18 +22,10 @@
         ['name' => 'The Mars', 'author' => 'Some Astronaut', 'year' => 1950, 'url' => 'http://gotosomeurl.com'],
         ['name' => 'Robin Bobin', 'author' => 'John Doe', 'year' => 1930, 'url' => 'http://gotosomeurl.com'],
     ];
-    // Funtion
-    $filter = function ($books, $author) {
-        $filteredBooks = [];
-        foreach ($books as $book) {
-            if ($book['author'] === $author) {
-                $filteredBooks[] = $book;
-            }
-        }
-        return $filteredBooks;
-    };
 
-    $filteredBooks = $filter($books, 'M.Kidruk');
+    $filteredBooks = array_filter($books, function ($book) {
+        return $book['year'] >= 2000;
+    });
 
     ?>
     <h1>
@@ -41,11 +33,11 @@
     </h1>
     <ul>
         <?php foreach ($filteredBooks as $book) : ?>
-                <li>
-                    <a href="<?php echo $book['url']; ?>">
-                        <?php echo $book['name']; ?> (<?php echo $book['year']; ?>) - By <?php echo $book['author']; ?>
-                    </a>
-                </li>
+            <li>
+                <a href="<?php echo $book['url']; ?>">
+                    <?php echo $book['name']; ?> (<?php echo $book['year']; ?>) - By <?php echo $book['author']; ?>
+                </a>
+            </li>
         <?php endforeach; ?>
     </ul>
 </body>
