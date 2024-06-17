@@ -11,9 +11,9 @@
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="/"
                            class="<?= urlIS('/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700 hover:text-white">Home</a>
-                        <a href="/about.php"
+                        <a href="/controllers/about.php"
                            class="<?= urlIS('/about.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">About</a>
-                        <a href="/contact.php"
+                        <a href="/controllers/contact.php"
                            class="<?= urlIS('/contact.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Contact</a>
                     </div>
                 </div>
